@@ -10,10 +10,10 @@ services:
     volumes:
       - mysql-dbms-data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD: my-app-root-password-12345
-      - MYSQL_USER: tanmayvaij
-      - MYSQL_PASSWORD: 12345678
-      - MYSQL_DATABASE: strapi-cms-db
+      MYSQL_ROOT_PASSWORD: my-app-root-password-12345
+      MYSQL_USER: tanmayvaij
+      MYSQL_PASSWORD: 12345678
+      MYSQL_DATABASE: strapi-cms-db
 
   strapi-cms:
     image: strapi/strapi
@@ -26,11 +26,11 @@ services:
     depends_on:
       - mysql-dbms
     environment:
-      - DATABASE_CLIENT: mysql
-      - DATABASE_HOST: mysql-dbms
-      - DATABASE_PORT: 3306
-      - DATABASE_USERNAME: tanmayvaij
-      - DATABASE_PASSWORD: 12345678
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: mysql-dbms
+      DATABASE_PORT: 3306
+      DATABASE_USERNAME: tanmayvaij
+      DATABASE_PASSWORD: 12345678
 
 volumes:
   mysql-dbms-data:
