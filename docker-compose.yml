@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+
+  mysql-dbms:
+    image: mysql
+    container_name: mysql-dbms
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-dbms-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD: my-app-root-password-12345
+      - MYSQL_USER: tanmayvaij
+      - MYSQL_PASSWORD: 12345678
+      - MYSQL_DATABASE: strapi-cms-db
+
+  strapi-cms:
+    image: strapi/strapi
+    container_name: strapi-cms
+    ports:
+      - 1337:1337
+    volumes:
+      - ./strapi-cms:/srv/app
+      - ./strapi-cms/public/uploads:/srv/app/public/uploads
+    depends_on:
+      - mysql-dbms
+    environment:
+      - DATABASE_CLIENT: mysql
+      - DATABASE_HOST: mysql-dbms
+      - DATABASE_PORT: 3306
+      - DATABASE_USERNAME: tanmayvaij
+      - DATABASE_PASSWORD: 12345678
+
+volumes:
+  mysql-dbms-data:
+
+networks:
+  default:
+    name: strapi-mysql-network
