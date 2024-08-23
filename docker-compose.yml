@@ -16,7 +16,7 @@ services:
       MYSQL_DATABASE: strapi-cms-db
 
   strapi-cms:
-    image: strapi/strapi
+    image: strapi/strapi:alpine
     container_name: strapi-cms
     ports:
       - 1337:1337
