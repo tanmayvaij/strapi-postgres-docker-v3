@@ -39,7 +39,7 @@ services:
       ADMIN_JWT_SECRET: tobeosijrgjw0ew90jvrmodified
       TRANSFER_TOKEN_SALT: e20910498qwjh9g0sjtoinxzsb9tiw
       JWT_SECRET: tj0w9jg0j9e4ojgosgzse90a9w30j39r
-
+      NODE_ENV: production
 
 volumes:
   mysql-dbms-data:
