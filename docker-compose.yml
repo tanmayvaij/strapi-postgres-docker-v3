@@ -21,8 +21,8 @@ services:
     ports:
       - 1337:1337
     volumes:
-      - ./strapi-cms:/srv/app
-      - ./strapi-cms/public/uploads:/srv/app/public/uploads
+      - .:/app
+      - ./public/uploads:/app/public/uploads
     depends_on:
       - mysql-dbms
     environment:
@@ -32,6 +32,14 @@ services:
       DATABASE_NAME: strapi-cms-db
       DATABASE_USERNAME: tanmayvaij
       DATABASE_PASSWORD: 12345678
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: "89uw5g9w20g9205,095w2g90j20j909j2"
+      API_TOKEN_SALT: w09u5g0wg9jgsngekonognwsngo
+      ADMIN_JWT_SECRET: tobeosijrgjw0ew90jvrmodified
+      TRANSFER_TOKEN_SALT: e20910498qwjh9g0sjtoinxzsb9tiw
+      JWT_SECRET: tj0w9jg0j9e4ojgosgzse90a9w30j39r
+
 
 volumes:
   mysql-dbms-data:
