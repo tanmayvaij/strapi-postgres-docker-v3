@@ -1,1 +1,1 @@
-Strapi@v3 Postgres docker config
+Strapi@v3 Postgres docker configuration
